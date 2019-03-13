@@ -1,7 +1,7 @@
 var x=1;
 var img = document.getElementById("pic");
 var png = new Array("https://i.imgur.com/PSfBVhN.png","https://i.imgur.com/0zctgcB.png","https://i.imgur.com/shHwovd.png");
-document.getElementById("next").onclick = function() {changeNext()};
+/*document.getElementById("next").onclick = function() {changeNext()};
 document.getElementById("prev").onclick = function() {changePrev()};
 
 function changeNext(){
@@ -22,4 +22,10 @@ function changePrev(){
       img.src="https://i.imgur.com/PSfBVhN.png";
   if(img.src=="https://i.imgur.com/shHwovd.png")
       img.src="https://i.imgur.com/0zctgcB.png";
-}
+}*/
+$('#next').click(changeNext() {
+    $('#topic').fadeOut(500, function() {
+        $('#topic').attr("src","https://i.imgur.com/PSfBVhN.png");
+        $('#topic').fadeIn(500);
+    });
+});
