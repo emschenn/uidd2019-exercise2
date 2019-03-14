@@ -1,31 +1,35 @@
-var x=1;
-var img = document.getElementById("pic");
-var png = new Array("https://i.imgur.com/PSfBVhN.png","https://i.imgur.com/0zctgcB.png","https://i.imgur.com/shHwovd.png");
-/*document.getElementById("next").onclick = function() {changeNext()};
-document.getElementById("prev").onclick = function() {changePrev()};
-
+var x=0;
+var png = ['https://i.imgur.com/PSfBVhN.png','https://i.imgur.com/0zctgcB.png','https://i.imgur.com/shHwovd.png'];
 function changeNext(){
-  console.log("n");
-  if(img.src=="https://i.imgur.com/PSfBVhN.png")
-      img.src="https://i.imgur.com/0zctgcB.png";
-  if(img.src=="https://i.imgur.com/0zctgcB.png")
-      img.src="https://i.imgur.com/shHwovd.png";
-  if(img.src=="https://i.imgur.com/shHwovd.png")
-      img.src="https://i.imgur.com/PSfBVhN.png";
+  //$("#topic").fadeOut(500);
+  console.log("next");
+  if(x==2)
+    x=0;
+  else
+    x++; 
+  document.getElementById("topic").src = png[x];
 }   
 
 function changePrev(){
-  console.log("p");
-  if(img.src=="https://i.imgur.com/PSfBVhN.png")
-      img.src="https://i.imgur.com/shHwovd.png"; 
-  if(img.src=="https://i.imgur.com/0zctgcB.png")
-      img.src="https://i.imgur.com/PSfBVhN.png";
-  if(img.src=="https://i.imgur.com/shHwovd.png")
-      img.src="https://i.imgur.com/0zctgcB.png";
-}*/
-$('#next').click(changeNext() {
-    $('#topic').fadeOut(500, function() {
-        $('#topic').attr("src","https://i.imgur.com/PSfBVhN.png");
-        $('#topic').fadeIn(500);
-    });
-});
+  console.log("prev");
+  if(x==0)
+    x=2;
+  else  
+    x--;  
+  document.getElementById("topic").src = png[x];
+} 
+  
+function change(){
+  $("#topic").fadeOut(1000);
+  document.getElementById("topic").src = png[x];
+  if(x==2)
+    x=0;
+  else
+    x++; 
+  $("#topic").fadeIn(1000);
+}
+
+function start(){
+  setInterval(change,3000);
+}
+
