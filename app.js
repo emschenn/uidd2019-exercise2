@@ -1,7 +1,6 @@
 var x=0;
 var png = ['https://i.imgur.com/PSfBVhN.png','https://i.imgur.com/0zctgcB.png','https://i.imgur.com/shHwovd.png'];
 function changeNext(){
-  //$("#topic").fadeOut(500);
   console.log("next");
   if(x==2)
     x=0;
@@ -20,16 +19,16 @@ function changePrev(){
 } 
   
 function change(){
-  $("#topic").fadeOut(1000);
-  document.getElementById("topic").src = png[x];
-  if(x==2)
-    x=0;
-  else
-    x++; 
-  $("#topic").fadeIn(1000);
+	$("#topic").fadeOut(700, function() {
+  	if(x==2)
+      x=0;
+    else
+      x++; 
+ 	  document.getElementById("topic").src = png[x];
+    $("#topic").fadeIn(500);
+  });
 }
 
 function start(){
-  setInterval(change,3000);
+  setInterval(change,5000);
 }
-
